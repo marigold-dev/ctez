@@ -442,7 +442,7 @@ let get_marginal_price (param : get_marginal_price) (storage : storage) : result
  * Main
  * ============================================================================= *)
 
-let main ((entrypoint, storage) : entrypoint * storage) : result =
+let main (entrypoint: entrypoint) (storage: storage) : result =
     match entrypoint with
     | AddLiquidity param ->
         add_liquidity param storage

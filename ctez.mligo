@@ -218,7 +218,7 @@ let cfmm_price (storage : storage) (price_numerator : nat) (price_denominator : 
 
     ([op_ctez_target], {storage with drift = new_drift ; last_drift_update = (Tezos.get_now ()) ; target = new_target})
 
-let main (p, s : parameter * storage) : result =
+let main (p: parameter) (s: storage) : result =
   match p with
   | Withdraw w -> (withdraw s w : result)
   | Register_deposit r -> (register_deposit s r : result)

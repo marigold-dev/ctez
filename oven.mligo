@@ -2,7 +2,7 @@
 
 let create_oven (delegate : key_hash option) (amnt : tez) (storage : oven_storage) = Tezos.create_contract
         (* Contract code for an oven *)
-	(fun (p , s : oven_parameter * oven_storage) -> (
+	(fun (p: oven_parameter) (s: oven_storage) -> (
 	    (* error codes *)
 	    let error_WITHDRAW_CAN_ONLY_BE_CALLED_FROM_MAIN_CONTRACT = 1001n in
 	    let error_ONLY_OWNER_CAN_DELEGATE = 1002n in

@@ -149,7 +149,7 @@ let getTotalSupply (param : getTotalSupply) (storage : storage) : operation list
   let total = storage.total_supply in
   [Tezos.transaction total 0mutez param.callback]
 
-let main (param, storage : parameter * storage) : result =
+let main (param: parameter) (storage: storage) : result =
   begin
     if (Tezos.get_amount ()) <> 0mutez
     then failwith "DontSendTez"
